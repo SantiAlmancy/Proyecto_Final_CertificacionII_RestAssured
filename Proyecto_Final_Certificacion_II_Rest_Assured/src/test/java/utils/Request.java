@@ -51,7 +51,4 @@ public class Request {
         response.then().log().body();
         return response;
     }
-
-
-
 }

@@ -15,6 +15,3 @@ Feature: Employees endpoint
       And I verify that the body does not have size 0
       And I verify the following data in the body response
         | Diego | 3500 | 26 |
-
-
-
