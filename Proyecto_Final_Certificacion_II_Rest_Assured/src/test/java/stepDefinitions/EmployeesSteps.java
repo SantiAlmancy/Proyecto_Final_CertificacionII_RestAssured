@@ -21,9 +21,11 @@ import static org.hamcrest.CoreMatchers.not;
 
 public class EmployeesSteps {
     Response response;
+    // LOS THREAD SLEEPS SON PUESTOS PARA LOGRAR EJECUTAR TODOS LOS TESTCASES A LA VEZ
+    // DESCOMENTARLOS SI QUIERE EJECUTAR TODOS A LA VEZ; PERO TARDA DEMASIADO
     @Given("I perform a GET to the employees endpoint")
     public void getEmployees() throws InterruptedException {
-        Thread.sleep(60000);
+        //Thread.sleep(60000);
         response = Request.get(GET_EMPLOYEES);
     }
 
@@ -41,7 +43,7 @@ public class EmployeesSteps {
     @And("I perform a POST to the create endpoint with the following data")
     public void postEmployee(DataTable employeeInfo) throws JsonProcessingException, InterruptedException
     {
-        Thread.sleep(60000);
+        //Thread.sleep(60000);
         List<String> data = employeeInfo.transpose().asList(String.class);
 
         Employee employee = new Employee();
@@ -66,7 +68,7 @@ public class EmployeesSteps {
     @Given("I perform a DELETE to delete the id {string}")
     public void deleteEmployee(String id) throws InterruptedException
     {
-        Thread.sleep(60000);
+        //Thread.sleep(60000);
         this.response = Request.delete(DELETE_EMPLOYEE, id);
     }
     @And("I verify that the employee with id {string} no longer exists")
@@ -86,13 +88,13 @@ public class EmployeesSteps {
 
     @Given("I perform a GET to get the employee of id: {string}")
     public void getEmployeeByID(String id) throws InterruptedException {
-        Thread.sleep(60000);
+        //Thread.sleep(60000);
         response = Request.getWithId(GET_EMPLOYEE,id);
     }
 
     @Given("I perform a PUT to the update a employee of id {string} with the following data:")
     public void putEmployee(String id, DataTable employeeInfo) throws JsonProcessingException, InterruptedException {
-        Thread.sleep(60000);
+        //Thread.sleep(60000);
         List<String> data = employeeInfo.transpose().asList(String.class);
 
         Employee employee = new Employee();
